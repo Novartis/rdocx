@@ -1,0 +1,9 @@
+fig_2:
+  type: FIG
+  title: "Comparative Analysis of Categories X and Y"
+  file: Figure_2_2_Comparative_Analysis.png
+
+fig_3:
+  type: FIG
+  title: "Comparative Analysis of Categories X and Y"
+  file: Figure_2_3_Comparative_Analysis.png

@@ -1,0 +1,54 @@
+# yaml file with all outputs to be updated in example report
+
+fig_1:
+  type: FIG
+  title: "Data Point Distribution in Sample Set A"
+  file: Figure_2_1_Data_Point_Distribution.png
+
+fig_2:
+  type: FIG
+  title: "Comparative Analysis of Categories X and Y"
+  file: Figure_2_2_Comparative_Analysis.png
+  occurrence: 1
+
+fig_3:
+  type: FIG
+  title: "Comparative Analysis of Categories X and Y"
+  file: Figure_2_3_Comparative_Analysis.png
+  occurrence: 2
+fig_4:
+  type: FIG
+  title: "Trend Analysis Over Time (Yearly Data)"
+  file: Figure_2_4_Trend_Analysis.png
+  occurrence: 1
+
+fig_5:
+  type: FIG
+  title: "Trend Analysis Over Time (Yearly Data)"
+  file: Figure_2_5_Trend_Analysis.png
+  occurrence: 2
+
+fig_6:
+  type: FIG
+  title: "Trend Analysis Over Time (Monthly Data)"
+  file: Figure_3_1_Trend_Analysis.png
+
+table_1:
+  type: TBL
+  title: "Summary of Sample Statistics"
+  file: Table_2_1_Sample_Statistics.csv
+  widths: NA
+
+table_2:
+  type: TBL
+  title: "Breakdown of Category X by Subcategory"
+  file: Table_2_2_Breakdown_of_Category_X.csv
+  widths: c(0.6,0.2,0.2)
+
+table_3:
+  type: TBL
+  title: "Yearly Performance Metrics"
+  file: Table_3_1_Yearly_Performance_Metrics.csv
+  widths: NA
+
+

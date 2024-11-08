@@ -1,0 +1,54 @@
+output_1:
+  type: TBL
+  title: Summary of Sample Statistics
+  file: Table_2_1_Summary_of_Sample_Statistics.csv
+  widths: ~
+  occurrence: ~
+output_2:
+  type: FIG
+  title: Data Point Distribution in Sample Set A
+  file: Figure_2_1_Data_Point_Distribution.png
+  widths: ~
+  occurrence: ~
+output_3:
+  type: FIG
+  title: Comparative Analysis of Categories X and Y
+  file: Figure_2_2_Comparative_Analysis.png
+  widths: ~
+  occurrence: ~
+output_4:
+  type: FIG
+  title: Comparative Analysis of Categories X and Y
+  file: Figure_2_3_Comparative_Analysis.png
+  widths: ~
+  occurrence: ~
+output_5:
+  type: TBL
+  title: Breakdown of Category X by Subcategory
+  file: Table_2_2_Breakdown_of_Category_X.csv
+  widths: ~
+  occurrence: ~
+output_6:
+  type: FIG
+  title: Trend Analysis Over Time (Yearly Data)
+  file: Figure_2_4_Trend_Analysis.png
+  widths: ~
+  occurrence: ~
+output_7:
+  type: FIG
+  title: Trend Analysis Over Time (Yearly Data)
+  file: Figure_2_5_Trend_Analysis.png
+  widths: ~
+  occurrence: ~
+output_8:
+  type: TBL
+  title: Yearly Performance Metrics
+  file: Table_3_1_Yearly_Performance_Metrics.csv
+  widths: ~
+  occurrence: ~
+output_9:
+  type: FIG
+  title: Trend Analysis Over Time (Monthly Data)
+  file: Figure_3_1_Trend_Analysis.png
+  widths: ~
+  occurrence: ~

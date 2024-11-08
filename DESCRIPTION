@@ -1,0 +1,58 @@
+Package: rdocx
+Title: rdocx
+Description: The `rdocx` package streamlines clinical trial reporting 
+    by enabling R-driven, end-to-end workflows that produce reports in 
+    Microsoft Word format for interdisciplinary collaboration. Built with 
+    an object-oriented design, `rdocx` provides classes for creating 
+    structured report items (tables, figures, etc.) with a comprehensive 
+    suite of tests for quality assurance. The package allows rendering 
+    reports in a customizable Word template, promoting seamless 
+    integration into GxP-compliant environments. Two main use cases are 
+    supported, a generic RMarkdown report template for standardized 
+    document creation, and an automated reporting tool for selective 
+    updates to tables and figures in existing Word files.
+Version: 1.0.0
+Authors@R: c(
+  person("Janina", "Linnik", email = "janina.linnik@novartis.com", role = c("aut", "cre")),
+  person("Orla", "Doyle", email = "orla.doyle@novartis.com", role = c("aut")),
+  person("Ines", "Gimeno Molina", email = "ines.gimeno_molina@novartis.com", role = c("aut")),
+  person("Jack", "Talboys", email = "jack.talboys@novartis.com", role = c("ctb")))
+Maintainer: Janina Linnik <janina.linnik@novartis.com>, Orla Doyle <orla.doyle@novartis.com>, Ines Gimeno Molina <ines.gimeno_molina@novartis.com> 
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
+Imports:
+    rmarkdown,
+    dplyr,
+    flextable,
+    knitr,
+    lgr,
+    officer,
+    R6,
+    checkmate,
+    jpeg,
+    magick,
+    magrittr,
+    png,
+    stats,
+    stringr,
+    tools,
+    utils,
+    xml2,
+    yaml,
+    cowplot,
+    ggplot2,
+    kableExtra,
+    testthat
+VignetteBuilder: knitr
+Collate: 
+    'ActivityTable.R'
+    'ChangelogTable.R'
+    'ReplaceOutputs.R'
+    'SignaturesTable.R'
+    'TitlePage.R'
+    'rdocx_global.R'
+    'rmd_render.R'
+    'utils.R'
+    'utils_checks.R'

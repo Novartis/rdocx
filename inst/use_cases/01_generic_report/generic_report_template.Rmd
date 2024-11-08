@@ -1,0 +1,267 @@
+---
+output:
+    word_document: 
+        toc: yes
+toc-title: Table of contents
+---
+
+
+```{r, header, include=F}
+
+# Install rdocx and load it
+library(rdocx)
+
+# Load other required R packages 
+library(officer)
+library(flextable)
+library(dplyr)
+library(kableExtra)
+library(R6)
+library(lgr)
+
+# Load R packages for the example plot
+library(ggplot2)
+library(cowplot)
+
+
+# These are some examples of commands to set the global options for knitr Rmd compiler. 
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(cache = FALSE)
+knitr::opts_chunk$set(tab.cap.pre = "", tab.cap.sep = "")
+
+# Add your custom functions and settings below (if any)
+
+```
+
+
+```{r, titlepage-info}
+# === Provide information for the title page ===
+
+# This information will be displayed on the title page of the rendered
+# document.
+tp <- TitlePage$new(
+  report_title= "Super cool document",
+  department = "Cool department",
+  study_title = "Compute super cool things",
+  study_number = "OWNDJQW9923",
+  status = "Draft",
+  version  = "1",
+  date = "01-Feb-2024",
+  bus_class = "Confidential")
+
+```
+
+```{r, changelog-info}
+# === Provide information for the change log table ===
+
+# This information will be displayed on the second page of the rendered
+# document. You need to add as many ChangelogTableRow elements as rows as you need in your 
+# change log table. After that, you'll need to assign these ChangelogTableRow elements
+# to a ChangelogTable element.
+
+ctr_1 <- ChangelogTableRow$new(
+  date = '01-Oct-2024',
+  version = 'Initial version',
+  why_update = 'Create first version of the document',
+  what_changed = 'NA/ Initial version')
+
+ctr_2 <- ChangelogTableRow$new(
+  date = '15-Oct-2024',
+  version = 'Final version',
+  why_update = 'Change calculation of param 1',
+  what_changed = 'Section 2')
+
+changelog_table <- ChangelogTable$new()
+changelog_table$add_row(ctr_1)
+changelog_table$add_row(ctr_2)
+
+```
+
+```{r}
+# === Provide information for the signatures table ===
+
+# This information will be displayed on the third page of the rendered
+# document. You need to add as many SignaturesTableRow elements as rows as you need in your 
+# signatures table. After that, you'll need to assign these SignaturesTableRow elements
+# to a SignaturesTable element.
+
+str <- SignaturesTableRow$new(
+  name = 'Harry Styles',
+  department = 'eCompliance',
+  date = '15-Feb-2024')
+
+str_2 <- SignaturesTableRow$new(
+  name = 'Alex Turner',
+  department = 'Product Development',
+  date = '20-Feb-2024')
+
+signatures_table <- SignaturesTable$new()
+signatures_table$add_row(str)
+signatures_table$add_row(str_2)
+
+
+```
+
+
+```{r, final-title-pages}
+# === This code chunk generates the title page (do not modify) ===
+
+# Append change log table and signatures table to the title page
+tp$changelog_table <- changelog_table$get_table()
+tp$signatures_table <- signatures_table$get_table()
+tp$get_title_page()
+
+```
+
+\newpage
+
+# Activity Methodology
+
+&nbsp;
+
+__Introduction__
+
+Start adding your text here. Example text: This document serves as evidence of the accuracy of the information provided in the study protocol OWNDJQW9923 v1 Section X.Y. The calculations and review [or reassessment] were performed by the following statisticians:
+
+
+```{r statistician-names}
+# === Provide information for the Activity Table ===
+
+at <- ActivityTable$new(
+  activity = 'Super cool calculation',
+  main_author_name = 'David Bowie',
+  main_activity_date = '01-Oct-2024',
+  qc_author_name = 'Freddie Mercury',
+  qc_activity_date = '20-Oct-2024')
+
+at$get_table()
+```
+
+
+&nbsp;
+__A table__
+
+You can directly embed tables into this document (see for example Table 1-2).
+
+&nbsp;
+
+```{r example-table, out.width='\\textwidth'}
+# === Example Table 1-2 ===
+
+# Generate some example data
+example_data <- data.frame(
+  column_1 = seq(12),
+  column_2 = rnorm(12, mean = 10, sd = 1),
+  column_3 = paste0(round(rbeta(12, 1, 1), 2)*100, "%")
+)
+
+# Make a table using the {flextable} package
+example_data %>%
+  flextable::flextable() %>%
+  flextable::width(width = 2) %>%
+  # Make headers bold
+  flextable::bold(bold = TRUE, part = "header") %>%
+  # Use zebra theme for row colors
+  flextable::theme_zebra() %>%
+  # Define column names
+  flextable::set_header_labels(
+    column_1 = "Header 1",
+    column_2 = "Header 2",
+    column_3 = "Header 3"
+  ) %>%
+  # Set borders
+  flextable::border_outer() %>%
+  flextable::border_inner_h() %>%
+  flextable::border_inner_v() %>%
+  # Add table captions
+  flextable::set_caption(
+    caption = "Table 1-2: This is an example table. Add caption text here.",
+    style = "Table Caption", autonum = "autonum"
+  )
+```
+
+&nbsp;
+__A figure__
+
+You can also embed figures (see for example Figure 1-1).
+
+```{r example-figure, fig.dim = c(6, 2.5), fig.cap="Figure 1-1: Add your figure caption here.", fig.crop=F}
+# === Example Figure 1-1 ===
+
+#   * Adjust figure dimensions using the fig.dim option in the chunk settings 
+#     above: fig.dim = (width in inches, length in inches)
+#   * Add the figure caption using the fig.cap option in the chunk settings 
+#     above: fig.cap = "Add your caption text here".
+
+# Plot ToothGrowth data set using {ggplot2}
+ggplot(ToothGrowth) +
+  geom_boxplot(
+    aes(dose, len, color = supp, group = interaction(dose, supp)),
+    width = 0.2,
+    outlier.size = 0.5,
+    position = position_dodge(width = 0.4)
+  ) +
+  geom_point(
+    aes(dose, len, color = supp),
+    position = position_dodge(width = 0.4),
+    alpha = 0.7,
+    size = 0.5
+  ) +
+  theme_minimal(base_size = 12) +
+  cowplot::panel_border() +
+  theme(text = element_text(family = "serif")) + 
+  scale_color_brewer(
+    name = "Legend title",
+    palette = "Dark2"
+  ) +
+  labs(
+    x = "Title x-axis", 
+    y = "Title y-axis",
+    title = "Example figure"
+  )
+
+```
+
+&nbsp;
+
+## This is a subsection 
+
+&nbsp;
+
+You can include subsections, add text here. 
+
+&nbsp;
+
+### This is a subsubsection
+
+&nbsp;
+
+You can also include subsubsection, add text here.
+
+&nbsp;
+
+
+
+# References
+
+&nbsp;
+
+Add your references in alphabetical order here (if applicable). For example:
+
+Einstein, A. (1905). On the movement of small particles suspended in a stationary liquid demanded by the molecular-kinetic theory of heat. Theory of Brownian Movement.
+
+# Appendix
+
+## Information for sample size calculation
+
+&nbsp;
+
+Please include additional information as needed.
+
+## Information for sample size verification
+
+&nbsp;
+
+Please include additional information as needed.

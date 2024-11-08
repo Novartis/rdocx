@@ -1,0 +1,164 @@
+---
+title: "RMarkdown to Docx: Generic Report"
+Author: Novartis
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{RMarkdown to Docx: Generic Report}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r}
+# Install and load rdocx
+library(rdocx)
+
+# Load other required packages
+library(flextable)
+library(magrittr)
+```
+
+# Introduction
+
+In this vignette we demonstrate using the `rdocx` package for creating a Generic Report Document with the following workflow:
+
+1. The user populates the Rmarkdown template for their report. 
+2. The user renders their report as a docx file that follows the style of the provided docx template.
+3. The user inspects the docx report and if changes are needed the user can re-generate the report by editing the Rmarkdown template and re-rendering the docx version.
+
+# 1. Populating the Rmarkdown template
+For illustrative purposes, a Generic Report Rmd template has been created. In the `rdocx` package, the template is stored here:
+
+`use_cases/01_generic_report/generic_report_template.Rmd`
+
+The template collects the key static elements that are common across all reports as well as examples of some dynamic elements.
+
+If you are new to Rmarkdown then you may find this [cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) helpful. 
+
+## Static elements
+
+In the Rmarkdown template the following static elements are supported:
+
+- Title Page
+- Change log table
+- Signatures table
+- Activity table 
+
+Each of these elements are represented as classes in the `rdocx` package. Below is an example of how these are populated in the Rmarkdown template for the title page element. Each attribute of the element has a unique entry that goes through a series of checks once entered. For example, dates are checked to ensure they are in `dd-Mmm-yyyy` format. If the package encounters an unexpected entry the user is alerted through an error message. 
+
+```{r}
+# === Provide information for the title page ===
+tp <- rdocx::TitlePage$new(
+  report_title= "Super cool document",
+  department = "Cool department",
+  study_title = "Compute super cool things",
+  study_number = "OWNDJQW9923",
+  status = "Draft",
+  version  = "1",
+  date = "01-Feb-2024",
+  bus_class = "Confidential"
+)
+
+```
+
+## Custom elements 
+
+### Tables and Figures
+
+A report can also contain dynamic elements such as tables and figures from your analysis. These can be included by adding your R code that generates these outputs directly to the Rmarkdown file. For example, the following code will create a formatted table using the `flextable` package. 
+
+```{r example-table-vig, out.width='\\textwidth'}
+# Generate example data
+example_data <- data.frame(
+  column_1 = seq(12),
+  column_2 = rnorm(12, mean = 10, sd = 1),
+  column_3 = paste0(round(rbeta(12, 1, 1), 2)*100, "%")
+)
+# Make a table
+example_data %>%
+  flextable::flextable() %>%
+  flextable::width(width = 2) %>%
+  # Make headers bold
+  flextable::bold(bold = TRUE, part = "header") %>%
+  # Use zebra theme for row colors
+  flextable::theme_zebra() %>%
+  # Define column names
+  flextable::set_header_labels(
+    column_1 = "Header 1",
+    column_2 = "Header 2",
+    column_3 = "Header 3"
+  ) %>%
+  # Set borders
+  flextable::border_outer() %>%
+  flextable::border_inner_h() %>%
+  flextable::border_inner_v() %>%
+  # Add table captions
+  flextable::set_caption(
+    caption = "Table 1-2: This is an example table. Add caption text here.",
+    style = "Table Caption", autonum = "autonum"
+  )
+```
+
+
+### Text
+Descriptive text can be added to the Rmarkdown using markdown syntax.
+
+# 2. Rendering your docx file
+
+Now that the Rmarkdown template has been populated with your analysis you can begin the process of rendering your docx file. This process will use the Generic Report Template as the reference document; this document provides the title page structure and the layout style for rendering the docx file. 
+Note that the path to the Generic Report Template is configured using the function \code{generic_report_template()}.
+
+If you'd like to get more information on the Generic Report Template version, please call the following function:
+
+```{r}
+generic_report_template()
+```
+
+Let's render!
+
+```{r,eval=TRUE}
+# Template Rmarkdown file that include the details for your sample size report.
+rmd_filename <-  system.file(
+  "use_cases/01_generic_report/",
+  "generic_report_template.Rmd",
+   package = "rdocx"
+)
+
+# Specify the location where you would like your docx to be written.
+# Here we use the same location as the Rmarkdown template.
+output_path <- dirname(rmd_filename)
+
+# Define the version (e.g., 0, 1, 12 which will be modified to follow version 
+# Numbering guidelines, e.g., _v00, _v01, v_12.) of your report that will be used 
+# to name your docx file
+version <- 2
+
+rdocx::rmd_render(
+  rmd_filename = rmd_filename,
+  output_path = output_path,
+  version = version
+)
+
+```
+
+You should now have rendered your docx file in the location `output_path`. Please review the rendering to ensure it is as expected. 
+
+## Logging your settings and session info
+
+The `rmd_render` function also logs information to aid reproducibility and traceability. The log file will be written to the same location as the `output_path`. The log file will contain the following information:
+
+- The template used
+
+- The name and location of your rendered docx file
+
+- The path from where your R libraries are loaded (i.e. the package bundle version)
+
+- The R session info provided by `sessionInfo()`
+
+👀 If you encounter an error please [raise an issue](ADD LINK) for the {rdocx} package team.
