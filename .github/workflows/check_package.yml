@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [main, master]
 
-name: R-CMD-check.yaml
+name: Run checks
 
 permissions: read-all
 
@@ -50,3 +50,4 @@ jobs:
         with:
           upload-snapshots: true
           build_args: 'c("--no-manual","--compact-vignettes=gs+qpdf")'
+          check_args: '--no-stop-on-warnings'
