@@ -6,9 +6,9 @@ on:
       branches: [main, master]
     pull_request:
       branches: [main, master]
-    workflow_dispatch:
+
   
-name: Test and build pages
+name: Test coverage
 
 permissions: read-all
   
