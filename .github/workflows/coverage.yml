@@ -13,7 +13,7 @@ name: Test coverage
 permissions: read-all
   
 jobs:
-    coverage_and_build:
+    coverage:
       runs-on: ubuntu-latest
       env:
         GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
