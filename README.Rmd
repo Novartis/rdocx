@@ -16,8 +16,8 @@ knitr::opts_chunk$set(
 # rdocx
 
 <!-- badges: start -->
-[![Codecov test coverage](https://codecov.io/gh/ines-gimeno-molina/R-test/branch/main/graph/badge.svg)](https://app.codecov.io/gh/ines-gimeno-molina/R-test/?branch=main)
-[![R-CMD-check.yaml](https://github.com/ines-gimeno-molina/R-test/actions/workflows/check-package.yml/badge.svg)](https://github.com/ines-gimeno-molina/R-test/actions/workflows/check-package.yml)
+[![R-CMD-check.yaml](https://github.com/Novartis/rdocx/actions/workflows/check_package.yml/badge.svg)](https://github.com/Novartis/rdocx/actions/workflows/check_package.yml)
+[![pkgdown](https://github.com/Novartis/rdocx/actions/workflows/pkgdown.yml/badge.svg)](https://github.com/Novartis/rdocx/actions/workflows/pkgdown.yml)
 <!-- badges: end -->
 
 
@@ -40,12 +40,10 @@ As for now, there are two main applications of **{rdocx}**:
 **{rdocx}** can be installed from Gitlab using (update before pushing to Github)
 
 ```{r, eval=FALSE}
-devtools::install_github(
-  host = "",
-  repo = "", 
-  lib = "~/R",
-  build_vignettes = TRUE
-)
+devtools::install_github("Novartis/rdocx",
+                         ref='main',
+                         build_vignettes=TRUE,
+                         lib='~/R')
 ```
 
 Remember to set the parameter `lib` to the desired location for installation, as 
