@@ -30,13 +30,13 @@ classes are compatible with your template and adjust as needed.
 
 As for now, there are two main applications of **{rdocx}**:
 
-- [Generic Report](ADD%20LINK): As our first use case, the Generic
+- [Generic Report](https://opensource.nibr.com/rdocx/articles/generic_report.html): As our first use case, the Generic
   Report Rmd template allows the user to create a report in RMarkdown
   and render it directly from R into a Word document following the style
   of the Generic Report Word template that is used as a reference
   document by the Generic Report Rmd template.
 
-- [Automated Reporting](ADD%20LINK): Allows the user to automatically
+- [Automated Reporting](https://opensource.nibr.com/rdocx/articles/automated_reporting.html): Allows the user to automatically
   update all or selected tables/figures in a Word document.
 
 ## Installation
@@ -60,13 +60,12 @@ installation, as it will be installed in your local directory.
 library('rdocx', lib.loc="~/R")
 ```
 
-For quick access to the documentation, visit \[ADD LINK TO PAGES IN
-GITHUB\]. Read the vignettes on how to use the package with step-by-step
+For quick access to the documentation, visit [rdocx site](https://opensource.nibr.com/rdocx/index.html). Read the vignettes on how to use the package with step-by-step
 examples online:
 
-- [Generic Report](ADD%20LINK)
+- [Generic Report](https://opensource.nibr.com/rdocx/articles/generic_report.html)
 
-- [Automated Reporting](ADD%20LINK)
+- [Automated Reporting](https://opensource.nibr.com/rdocx/articles/automated_reporting.html)
 
 Or call the vignettes directly in R:
 
