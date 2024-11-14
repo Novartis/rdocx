@@ -21,7 +21,7 @@ reference:
       - SignaturesTable
       - SignaturesTableRow
       - TitlePage
-      - rmd_render()
+      - rmd_render
   
   - title: Automated Reporting
   
