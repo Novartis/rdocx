@@ -26,3 +26,4 @@ search, and also possible sources path underneath the placeholder figure/tables
 cursor_reach_list(doc, "example caption")
 }
 }
+\keyword{internal}

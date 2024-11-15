@@ -21,3 +21,4 @@ Search for a value in a document and replicate it with the new one
 replace_text("dummy_doc.docx", "title", "new title")
 }
 }
+\keyword{internal}

@@ -3,7 +3,7 @@
 \docType{methods}
 \name{ChangelogTable}
 \alias{ChangelogTable}
-\title{Changelog Table class definition}
+\title{Class that defines the Changelog Table in the Generic Report}
 \description{
 This R6 class controls one row of the Changelog table that documents
 the date, version, reason and what changed in the update on the document.

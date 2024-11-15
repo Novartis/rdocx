@@ -3,6 +3,8 @@
 
 # rdocx
 
+# rdocx <img src="man/figures/hex-rdocx.png" align="right" width="80" alt="rdocx website" /></a>
+
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/Novartis/rdocx/actions/workflows/check_package.yml/badge.svg)](https://github.com/Novartis/rdocx/actions/workflows/check_package.yml)
 [![pkgdown](https://github.com/Novartis/rdocx/actions/workflows/pkgdown.yml/badge.svg)](https://github.com/Novartis/rdocx/actions/workflows/pkgdown.yml)

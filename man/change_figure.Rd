@@ -24,3 +24,4 @@ Change figure in a docx
 change_figure(doc, "/path/to/output", "output.png")
 }
 }
+\keyword{internal}

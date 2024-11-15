@@ -31,6 +31,8 @@
 #' @param date_format String. Expected date format. Default is dd-Mmm-yyyy.
 #'
 #' @return the original date str if matches conditions, FALSE if not
+#' 
+#' @keywords internal
 #'
 #' @examples
 #' \dontrun{
@@ -54,6 +56,8 @@ check_string_is_date <- function(date_str, date_format = "%d-%b-%Y") {
 #'
 #' @return the original date str if matches conditions, FALSE if not
 #' @import checkmate
+#' 
+#' @keywords internal
 #'
 #' @examples
 #' \dontrun{
@@ -72,6 +76,8 @@ check_name <- function(name_str){
 #' @param variable object to check
 #'
 #' @return the variable if matches conditions, error if not
+#' 
+#' @keywords internal
 #'
 #' @examples
 #' \dontrun{

@@ -2,7 +2,7 @@
 % Please edit documentation in R/SignaturesTable.R
 \name{SignaturesTableRow}
 \alias{SignaturesTableRow}
-\title{Signatures Table Row class definition}
+\title{Class that defines the Signatures Table Row in the Generic Report}
 \description{
 This R6 class controls one row of the Signatures table that documents
 the date, version, reason and what changed in the update on the document.

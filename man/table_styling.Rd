@@ -22,3 +22,4 @@ Add Generic Report Style to a flextable
 table_styling(table, widths = NA)
 }
 }
+\keyword{internal}

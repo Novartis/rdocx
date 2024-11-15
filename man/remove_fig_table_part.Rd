@@ -26,3 +26,4 @@ updated_example_caption <- remove_fig_table_part(example_caption)
 expected_output <- "Summary of Sample Statistics"
 }
 }
+\keyword{internal}

@@ -22,3 +22,4 @@ Check to see if a string is a date format
 check_string_is_date("01-Oct-2023")
 }
 }
+\keyword{internal}

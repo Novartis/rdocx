@@ -31,3 +31,4 @@ caption <- "This is a figure title (an a parenthesis use!)"
 escape_caption(caption)
 }
 }
+\keyword{internal}

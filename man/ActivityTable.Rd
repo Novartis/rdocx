@@ -2,7 +2,7 @@
 % Please edit documentation in R/ActivityTable.R
 \name{ActivityTable}
 \alias{ActivityTable}
-\title{Activity Table class definition}
+\title{Class that defines the Activity Table in the Generic Report}
 \description{
 This R6 class relates to the activity table in the generic report
 that documents the person who perfomed the activity and the person who validated

@@ -32,3 +32,4 @@ extract_figure_table_captions(system.file("use_cases/02_automated_reporting",
                                          package="rdocx"))
 }
 }
+\keyword{internal}

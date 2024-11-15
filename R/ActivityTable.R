@@ -24,7 +24,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-#' @title Activity Table class definition
+#' @title Class that defines the Activity Table in the Generic Report
 #'
 #' @description This R6 class relates to the activity table in the generic report 
 #' that documents the person who perfomed the activity and the person who validated 

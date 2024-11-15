@@ -3,7 +3,7 @@
 \name{TitlePage}
 \alias{TitlePage}
 \alias{get_title_page}
-\title{Title page class definition}
+\title{Class that defines the Title Page in the Generic Report}
 \description{
 This R6 class relates to the Title Page in a report that adds all
 the required fields of the Generic Report Title Page

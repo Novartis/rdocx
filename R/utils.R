@@ -36,6 +36,8 @@
 #'
 #' @import officer
 #' @importFrom magrittr `%>%`
+#' 
+#' @keywords internal
 #'
 #' @examples
 #' \dontrun{
@@ -68,6 +70,8 @@ replace_text <- function(doc, old_value, new_value) {
 #' @import checkmate
 #' @import officer
 #' @importFrom magrittr `%>%`
+#' 
+#' @keywords internal
 #'
 #' @examples
 #' \dontrun{
@@ -130,6 +134,8 @@ find_and_delete_output = function(template_docx,
 #'
 #' @import flextable
 #' @importFrom magrittr `%>%`
+#' 
+#' @keywords internal
 #'
 #' @examples
 #' \dontrun{
@@ -189,6 +195,8 @@ table_styling <- function(flex_table,
 #' character to ensure proper escaping.
 #'
 #' @return escaped caption
+#' 
+#' @keywords internal
 #'
 #' @examples
 #' \dontrun{
@@ -213,6 +221,8 @@ escape_caption <- function(caption) {
 #' @import utils
 #' @import stats
 #' @importFrom magrittr `%>%`
+#' 
+#' @keywords internal
 #'
 #' @examples
 #' \dontrun{
@@ -254,6 +264,8 @@ change_table <- function(template_doc,
 #' @import tools
 #' @import magick
 #' @importFrom magrittr `%>%`
+#' 
+#' @keywords internal
 #'
 #' @examples
 #' \dontrun{
@@ -298,6 +310,8 @@ change_figure <- function(template_doc,
 #' @param doc_final_path Location to save
 #'
 #' @import officer
+#' 
+#' @keywords internal
 #'
 #' @examples
 #' \dontrun{
@@ -316,6 +330,8 @@ save_updated_document <- function(document,
 #' @return formatted version "_v00", "_v02", _v13"
 #'
 #' @import checkmate
+#' 
+#' @keywords internal
 #'
 #' @examples
 #' \dontrun{
@@ -345,6 +361,8 @@ version_number <- function(version) {
 #' path could be and its associated source path text
 #'
 #' @import xml2
+#' 
+#' @keywords internal
 #'
 #' @examples
 #' \dontrun{
@@ -404,6 +422,8 @@ cursor_reach_list <- function(x, keyword) {
 #'
 #' @param yaml_file List. Already read yaml file to be checked for duplicates
 #' @import dplyr
+#' 
+#' @keywords internal
 #'
 search_for_duplicates = function(yaml_file) {
 
@@ -456,6 +476,8 @@ search_for_duplicates = function(yaml_file) {
 #'
 #' @return List figure_table_captions_sources contaning the figure_table_captions
 #' and its corresponding sources paths
+#' 
+#' @keywords internal
 #'
 #' @examples
 #' \dontrun{
@@ -513,6 +535,7 @@ extract_figure_table_captions = function(doc_path) {
 #'
 #' @return updated caption without Figure or Table number
 #'
+#' @keywords internal
 #' @examples
 #' \dontrun{
 #' example_caption <- 
@@ -579,6 +602,8 @@ remove_fig_table_part = function(caption) {
 #'
 #' @import yaml
 #' @import stringr
+#' 
+#' @keywords internal
 #'
 #' @examples
 #' \dontrun{

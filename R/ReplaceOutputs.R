@@ -24,7 +24,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-#' @title Replace Outputs in a word document
+#' @title Class that defines the Replace Outputs
 #'
 #' @description This R6 class allows to, given a template word document and a list
 #' of outputs, to add them at the given location in the text. It automates the

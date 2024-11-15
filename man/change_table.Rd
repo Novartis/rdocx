@@ -26,3 +26,4 @@ Change table in a docx
 change_table(doc, "data.csv", widths = NA)
 }
 }
+\keyword{internal}

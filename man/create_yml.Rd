@@ -46,3 +46,4 @@ captions <- extract_figure_table_captions(system.file("use_cases/02_automated_re
 create_yml(captions, "./example_yml.docx")
 }
 }
+\keyword{internal}

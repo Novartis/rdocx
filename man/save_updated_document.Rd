@@ -19,3 +19,4 @@ Save updated document
 save_updated_document(doc, "./new_doc.docx")
 }
 }
+\keyword{internal}

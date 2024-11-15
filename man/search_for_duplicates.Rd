@@ -13,3 +13,4 @@ search_for_duplicates(yaml_file)
 Look for duplicates in captions titles and raise a warning if
 the occurrence parameter is not defined.
 }
+\keyword{internal}

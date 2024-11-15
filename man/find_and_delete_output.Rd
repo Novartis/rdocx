@@ -32,3 +32,4 @@ find_and_delete_output(doc,
                         1)
 }
 }
+\keyword{internal}

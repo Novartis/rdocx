@@ -24,7 +24,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-#' @title Signatures Table Row class definition
+#' @title Class that defines the Signatures Table Row in the Generic Report
 #'
 #' @description This R6 class controls one row of the Signatures table that documents
 #' the date, version, reason and what changed in the update on the document.
@@ -95,7 +95,7 @@ SignaturesTableRow <- R6::R6Class(
   )
 )
 
-#' @title Signatures Table class definition
+#' @title Class that defines the Signatures Table in the Generic Report
 #'
 #' @description This R6 class controls one row of the Signatures table that documents
 #' the date, version, reason and what changed in the update on the document.

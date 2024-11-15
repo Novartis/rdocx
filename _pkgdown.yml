@@ -1,9 +1,8 @@
 url: https://opensource.nibr.com/rdocx/
 template:
+  bootstrap: 5
   bootswatch: minty
   light-switch: true
-  theme: gruvbox-light
-  theme-dark: gruvbox-dark
   
 development:
   mode: auto
@@ -22,6 +21,7 @@ reference:
       - SignaturesTableRow
       - TitlePage
       - rmd_render
+      - generic_report_template
   
   - title: Automated Reporting
   

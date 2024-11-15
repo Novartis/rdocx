@@ -24,7 +24,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-#' @title Changelog Table Row class definition
+#' @title Class that defines the Changelog Table Row Table in the Generic Report
 #'
 #' @description This R6 class controls one row of the Changelog table that documents
 #' the date, version, reason and what changed in the update on the document.
@@ -121,7 +121,7 @@ ChangelogTableRow <- R6::R6Class(
   )
 )
 
-#' @title Changelog Table class definition
+#' @title Class that defines the Changelog Table in the Generic Report
 #'
 #' @description This R6 class controls one row of the Changelog table that documents
 #' the date, version, reason and what changed in the update on the document.

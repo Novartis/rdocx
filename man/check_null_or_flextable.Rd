@@ -21,3 +21,4 @@ ft <- flextable::flextable(head(mtcars))
 check_null_or_flextable(ft)
 }
 }
+\keyword{internal}

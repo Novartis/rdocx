@@ -21,3 +21,4 @@ error to guide users
 check_name("Harry Styles")
 }
 }
+\keyword{internal}
