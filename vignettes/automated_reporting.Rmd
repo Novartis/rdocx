@@ -223,4 +223,4 @@ The `update_all_outputs()` function also logs information to aid reproducibility
 
 -   The R session info provided by `sessionInfo()`
 
-👀 If you encounter an error please [raise an issue](ADD LINK) for the {rdocx} package team.
+👀 If you encounter an error please [raise an issue](https://github.com/Novartis/rdocx/issues) for the {rdocx} package team.
